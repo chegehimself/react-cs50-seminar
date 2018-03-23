@@ -12,9 +12,8 @@ import React, {Component} from 'react';
 // 	}
 	const SingleTodo = props => {
 		return(
-			<li>{this.props.todo}<button onClick={this.props.delete}>X</button></li>
+			<li>{props.todo}<button onClick={props.delete}>X</button></li>
 			);
 	}
-}
 
 export default SingleTodo;
