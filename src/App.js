@@ -3,16 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+  // set up a constructor
+  constructor() {
+    // allows us to use something like this
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  // use arrow notation that takes in no parameters
+  increament = () => {
+    this.setState({count: this.state.count + 1});
+  }
+
+  render () {
+    return(
+      <div>
+      <button onClick={this.increament}>Increament</button>
+      {this.state.count}
       </div>
     );
   }
